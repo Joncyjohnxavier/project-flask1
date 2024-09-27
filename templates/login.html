@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title> flask sample program</title>
+    </head>
+    <body>
+       <div class="container">
+        <h1>admin login</h1>
+        <form action="/login" method="post">
+          {% with message=get_flashed_messages() %}
+          {% if message %}
+              <div class="alert alert-warning mt-3">
+                {{message[0]}}
+              </div>
+              {% endif %}
+              {% endwith %}
+                <div class="mb-3">
+                    <label for="username"class="form-label">username</label>
+                    <input type="text" class="form-control" name="username" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password"class="form-label">password</label>
+                  <input type="text" class="form-control" name="password" required>
+              </div>
+                <button type="submit" class="btn btn-primary w-100">login</button>
+            </form>
+    </body>
+    </html>
